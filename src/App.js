@@ -6,19 +6,13 @@ import PageHeader from "./components/PageHeader";
 import "./components/styles/styles.css";
 
 const App = () => {
-  // const header = { name: "", email: "", phone: "" };
   const [state, setState] = useState({
     name: "",
     email: "",
     phone: "",
-    location:"",
+    location: "",
     statement: "",
-    uni:"",
-    degree:"",
-    grade:"",
-    studyFrom:"",
-    studyTo:""
-
+    education: [],
   });
 
   return (

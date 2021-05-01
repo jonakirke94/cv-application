@@ -57,7 +57,6 @@ a {
   display: flex;
   flex-direction: column;
   text-align: center;
-
 }
 
 .input-row {
@@ -66,11 +65,11 @@ a {
   justify-content: left;
   text-align: left;
   font-weight: 500;
-  font-size:medium;
+  font-size: medium;
   margin: 0px 0px 5px 0px;
 }
 
-.cv-header{
+.cv-header {
   font-size: x-large;
   text-transform: uppercase;
   border-color: #151e3f;
@@ -81,26 +80,29 @@ a {
   text-align: right;
 }
 
-.contact-details{
+.contact-details {
   display: flex;
   flex-direction: column;
-  font-size:medium;
+  font-size: medium;
   text-transform: initial;
 }
 
-.cv-heading{
+.cv-heading {
   margin: 0px;
 }
 
-.output-page{
+.output-page {
   background-color: aliceblue;
+  overflow-y: scroll;
+
 }
 
-.input-page{
+.input-page {
   background-color: #f2f3d9;
+  overflow-y: scroll;
 }
 
-.input-heading{
+.input-heading {
   text-transform: uppercase;
   border-bottom: #151e3f;
   border-style: solid;
@@ -108,33 +110,30 @@ a {
   margin: 5px;
   padding: 0px;
   text-align: left;
-
 }
 form {
   margin: 5px;
 }
 
-p{
+p {
   margin: 5px 0px 5px 0px;
 }
 
-.statement{
+.statement {
   font-size: small;
   text-align: justify;
-  text-transform:none
+  text-transform: none;
 }
 
 form {
-  width:100%;
+  width: 100%;
   margin: 5px;
   padding: 5px;
-
 }
 
 input {
-  width:100%;
+  width: 100%;
   vertical-align: auto;
-
 }
 
 .long-input {
@@ -144,7 +143,7 @@ input {
   height: 85px;
 }
 
-.cv-subheader{
+.cv-subheader {
   font-size: large;
   text-transform: uppercase;
   border-color: #151e3f;
@@ -155,13 +154,12 @@ input {
   text-align: left;
 }
 
-.education-details{
+.education-details {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   margin: 5px;
 }
 
-.education-detail{
-
+.education-wrapper {
 }

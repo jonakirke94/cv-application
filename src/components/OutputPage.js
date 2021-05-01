@@ -19,14 +19,18 @@ const OutputPage = ({ state, setState }) => {
       </div>
       <div className="cv-subheader">Education</div>
       <div>
-        <div className="education-details">
-          <div>{state.degree}</div>
-          <div>{state.uni}</div>
-          <div>
-            {state.studyFrom} - {state.studyTo}
-          </div>
+        <div className="education-wrapper">
+          {state.education.map((value, index) => (
+            <div className="education-details" key={index}>
+              <div>{value.degree}</div>
+              <div>{value.uni}</div>
+              <div>
+                {value.studyFrom} - {value.studyTo}
+              </div>
+              <div className="education-details">{value.grade}</div>
+            </div>
+          ))}
         </div>
-        <div className="education-details">{state.grade}</div>
       </div>
     </section>
   );

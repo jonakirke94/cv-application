@@ -11,12 +11,9 @@ const LongTextField = ({ label, text, state, setState }) => {
   return (
     <form>
       <p>{label}</p>
-      <input
-        className="long-input"
-        type="text"
-        onChange={myChangeHandler}
-        value={state.value}
-      />
+      <textarea className="long-input" type="text" onChange={myChangeHandler}>
+        {state.value}
+      </textarea>
     </form>
   );
 };

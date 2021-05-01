@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/styles.css";
 
-const TextField = ({label, text, state, setState }) => {
+const TextField = ({ label, text, state, setState }) => {
   const myChangeHandler = (event) => {
     setState((currentState) => {
       return { ...currentState, [text]: event.target.value };
@@ -11,11 +11,7 @@ const TextField = ({label, text, state, setState }) => {
   return (
     <form>
       <p>{label}</p>
-      <input
-        type="text"
-        onChange={myChangeHandler}
-        value={state.value}
-      />
+      <input type="text" onChange={myChangeHandler} value={state[text]} />
     </form>
   );
 };
