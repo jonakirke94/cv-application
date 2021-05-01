@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/styles.css";
 
-const TextField = ({label, text, state, setState }) => {
+const TelField = ({ label, text, state, setState }) => {
   const myChangeHandler = (event) => {
     setState((currentState) => {
       return { ...currentState, [text]: event.target.value };
@@ -12,12 +12,13 @@ const TextField = ({label, text, state, setState }) => {
     <form>
       <p>{label}</p>
       <input
-        type="text"
+        type="tel"
         onChange={myChangeHandler}
         value={state.value}
+        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
       />
     </form>
   );
 };
 
-export default TextField;
+export default TelField;

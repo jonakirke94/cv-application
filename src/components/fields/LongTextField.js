@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/styles.css";
 
-const TextField = ({label, text, state, setState }) => {
+const LongTextField = ({ label, text, state, setState }) => {
   const myChangeHandler = (event) => {
     setState((currentState) => {
       return { ...currentState, [text]: event.target.value };
@@ -12,6 +12,7 @@ const TextField = ({label, text, state, setState }) => {
     <form>
       <p>{label}</p>
       <input
+        className="long-input"
         type="text"
         onChange={myChangeHandler}
         value={state.value}
@@ -20,4 +21,4 @@ const TextField = ({label, text, state, setState }) => {
   );
 };
 
-export default TextField;
+export default LongTextField;
