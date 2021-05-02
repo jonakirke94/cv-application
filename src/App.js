@@ -12,7 +12,7 @@ const App = () => {
     phone: "+61 434 836 615",
     location: "Perth, Australia",
     statement:
-      "Subsea Engineer with experience working across the project lifecycle of offshore oil and gas developments. Skilled in project management and delivery. Currently enrolled to study a Master of Computing to transition to a career in software engineering.",
+      "Subsea Engineer with experience working across the project lifecycle of offshore oil and gas developments. Skilled in project management and delivery. Currently enrolled to study a Master of Computing to transition into software engineering.",
     education: [
       {
         uni: "Imperial College London",

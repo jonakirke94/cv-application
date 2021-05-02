@@ -150,7 +150,7 @@ const Education = ({ state: cvState, setState: setCvState }) => {
       </div>
       <div className="btn-wrapper">
         <button className="btn" onClick={handleAddEducation}>
-          Add to CV
+          Add
         </button>
       </div>
     </div>

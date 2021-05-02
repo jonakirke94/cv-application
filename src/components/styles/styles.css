@@ -4,17 +4,17 @@ body {
   padding: 0px;
   margin: 0px;
   color: #050505;
-  background-color: #dddbcb;
+  background-color: #D9D4CF;
 }
 
 header {
   display: flex;
   flex-direction: row;
-  background-color: #1b9aaa;
+  background-color: #7C7877;
   padding: 30px;
   text-align: center;
   font-size: 35px;
-  color: #f5f1e3;
+  color: #ABD0CE;
   justify-content: space-between;
   align-items: center;
   height: 2vh;
@@ -36,7 +36,7 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  color: #050505;
+  color: #7C7877;
   height: 1vh;
   vertical-align: middle;
   text-align: center;
@@ -68,6 +68,7 @@ a {
   font-weight: 500;
   font-size: medium;
   margin: 0px 0px 5px 0px;
+  font-size: small;
 }
 
 .cv-header {
@@ -111,12 +112,15 @@ a {
   background-color: #ffffff;
   overflow-y: scroll;
   margin: 10px;
+  
 }
 
 .input-page {
-  background-color: #f5f1e3;
+  background-color: #ABD0CE;
   overflow-y: scroll;
   margin: 10px;
+  border-style: none;
+
 }
 
 .input-heading {
@@ -148,20 +152,19 @@ form {
 }
 
 input {
-  width: 95%;
+  width: 100%;
   vertical-align: auto;
+  border-style: none;
 }
 
-textarea {
-  width: 95%;
-  vertical-align: auto;
-}
 
 .long-input {
   width: 100%;
   word-wrap: break-word;
   word-break: break-all;
   height: 85px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .cv-subheader {
@@ -199,36 +202,50 @@ textarea {
 
 .btn-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
+  padding: 6px
+
 }
 
 .btn {
-  padding: 4px;
-  margin: 2px;
-  background-color: #050505;
+  padding: 5px;
+  margin: 5px;
+  background-color: #7C7877;
   border-radius: 4px;
-  color: #dddbcb;
+  color: white;
   border-style: none;
+  opacity: 0.8;
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 75px;
+
 }
 
 .btn-wrapper-delete {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
   border-style: solid;
   border-width: 0px 0px 0.5px 0px;
+  padding: 6px
 }
 
 .btn-delete {
-  padding: 4px;
-  margin: 2px;
-  background-color: #050505;
+  padding: 5px;
+  margin: 5px;
+  background-color: #7C7877;
   border-radius: 4px;
-  color: #dddbcb;
+  color: white;
   border-style: none;
-
   margin: 0px 0px 10px 0px;
+  opacity: 0.8;
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 75px;
+
 }
 
 .title {
@@ -252,18 +269,24 @@ textarea {
 
 .btn-wrapper-skill {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
+  padding: 6px
+
 }
 
 .btn-skill {
-  padding: 4px;
-  margin: 2px;
-  background-color: #050505;
+  padding: 5px;
+  margin: 30px 5px 5px 5px;
+  background-color: #7C7877;
   border-radius: 4px;
-  color: #dddbcb;
+  color: white;
   border-style: none;
   width: 75px;
+  opacity: 0.8;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .input-row-skill {
@@ -275,4 +298,9 @@ textarea {
   font-size: medium;
   align-items: center;
   margin: 0px 0px 5px 0px;
+  font-size: small;
+}
+
+.btn:hover, .btn-delete:hover, .btn-skill:hover {
+  opacity: 1;
 }

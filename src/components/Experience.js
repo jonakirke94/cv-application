@@ -171,7 +171,7 @@ const Experience = ({ state: cvState, setState: setCvState }) => {
       </div>
       <div className="btn-wrapper">
         <button className="btn" onClick={handleAddExperience}>
-          Add to CV
+          Add
         </button>
       </div>
     </div>
