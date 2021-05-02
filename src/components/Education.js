@@ -31,7 +31,8 @@ const Education = ({ state: cvState, setState: setCvState }) => {
   const handleDeleteEducation = (index) => {
     setCvState((currentState) => {
       // Remove the index from the array
-      const newEducationArray = currentState.education.splice(index, 1);
+      const newEducationArray = [...currentState.education];
+      newEducationArray.splice(index, 1);
       // Return state object with education changed to updated array
       return { ...currentState, education: newEducationArray };
     });
@@ -67,24 +68,6 @@ const Education = ({ state: cvState, setState: setCvState }) => {
                 }}
               />
               <TextField
-                label="University"
-                text="uni"
-                state={cvState.education[index]}
-                setState={(fieldState) => {
-                  setEducationState("uni", index, fieldState);
-                }}
-              />
-            </div>
-            <div className="input-row">
-              <TextField
-                label="Grade"
-                text="grade"
-                state={cvState.education[index]}
-                setState={(fieldState) => {
-                  setEducationState("grade", index, fieldState);
-                }}
-              />
-              <TextField
                 label="From"
                 text="studyFrom"
                 state={cvState.education[index]}
@@ -101,9 +84,27 @@ const Education = ({ state: cvState, setState: setCvState }) => {
                 }}
               />
             </div>
-            <div className="btn-wrapper">
+            <div className="input-row">
+              <TextField
+                label="University"
+                text="uni"
+                state={cvState.education[index]}
+                setState={(fieldState) => {
+                  setEducationState("uni", index, fieldState);
+                }}
+              />
+              <TextField
+                label="Grade"
+                text="grade"
+                state={cvState.education[index]}
+                setState={(fieldState) => {
+                  setEducationState("grade", index, fieldState);
+                }}
+              />
+            </div>
+            <div className="btn-wrapper-delete">
               <button
-                className="btn"
+                className="btn-delete"
                 onClick={() => handleDeleteEducation(index)}
               >
                 Delete
@@ -121,20 +122,6 @@ const Education = ({ state: cvState, setState: setCvState }) => {
           setState={setEducation}
         />
         <TextField
-          label="University"
-          text="uni"
-          state={education}
-          setState={setEducation}
-        />
-      </div>
-      <div className="input-row">
-        <TextField
-          label="Grade"
-          text="grade"
-          state={education}
-          setState={setEducation}
-        />
-        <TextField
           label="From"
           text="studyFrom"
           state={education}
@@ -143,6 +130,20 @@ const Education = ({ state: cvState, setState: setCvState }) => {
         <TextField
           label="To"
           text="studyTo"
+          state={education}
+          setState={setEducation}
+        />
+      </div>
+      <div className="input-row">
+        <TextField
+          label="University"
+          text="uni"
+          state={education}
+          setState={setEducation}
+        />
+        <TextField
+          label="Grade"
+          text="grade"
           state={education}
           setState={setEducation}
         />

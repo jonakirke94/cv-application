@@ -1,9 +1,14 @@
 import React from "react";
 import "../styles/styles.css";
 
-const LongTextField = ({ label, text, state, setState }) => {
+const LongTextField = ({
+  label,
+  text,
+  state: cvState,
+  setState: setCvState,
+}) => {
   const myChangeHandler = (event) => {
-    setState((currentState) => {
+    setCvState((currentState) => {
       return { ...currentState, [text]: event.target.value };
     });
   };
@@ -12,7 +17,7 @@ const LongTextField = ({ label, text, state, setState }) => {
     <form>
       <p>{label}</p>
       <textarea className="long-input" type="text" onChange={myChangeHandler}>
-        {state.value}
+        {cvState[text]}
       </textarea>
     </form>
   );

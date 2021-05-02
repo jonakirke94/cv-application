@@ -1,34 +1,34 @@
 body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   padding: 0px;
   margin: 0px;
-  color: #030027;
+  color: #050505;
+  background-color: #dddbcb;
 }
 
 header {
   display: flex;
   flex-direction: row;
-  background-color: #c16e70;
+  background-color: #1b9aaa;
   padding: 30px;
   text-align: center;
   font-size: 35px;
-  color: #f2f3d9;
+  color: #f5f1e3;
   justify-content: space-between;
   align-items: center;
-  height: 5vh;
+  height: 2vh;
 }
 
 section {
   display: flex;
   flex: 3;
-  background-color: #f2f3d9;
   padding: 10px;
   flex-direction: column;
-  height: 80vh;
+  height: 83vh;
+  border-color: #050505;
+  border-width: 1px 1px 1px 1px;
   border-style: solid;
-  border-color: #151e3f;
-  border-width: 1px 1px 1px 0px;
 }
 
 footer {
@@ -36,8 +36,8 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  color: #151e3f;
-  height: 5vh;
+  color: #050505;
+  height: 1vh;
   vertical-align: middle;
   text-align: center;
 }
@@ -45,7 +45,8 @@ footer {
 a {
   margin: 10px;
   text-decoration: none;
-  color: #030027;
+  color: #050505;
+  font-weight: 800;
 }
 
 .section-wrapper {
@@ -72,7 +73,7 @@ a {
 .cv-header {
   font-size: x-large;
   text-transform: uppercase;
-  border-color: #151e3f;
+  border-color: #050505;
   border-style: solid;
   border-width: 0px 0px 2px 0px;
   margin: 5px;
@@ -85,25 +86,42 @@ a {
   flex-direction: column;
   font-size: medium;
   text-transform: initial;
+  margin: 0px 0px 2px 0px;
 }
 
 .cv-heading {
   margin: 0px;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+.statement-wrapper {
+  border-color: #050505;
+  margin: 5px;
+  padding: 0px;
+  text-align: right;
+}
+
 .output-page {
-  background-color: aliceblue;
+  background-color: #ffffff;
   overflow-y: scroll;
+  margin: 10px;
 }
 
 .input-page {
-  background-color: #f2f3d9;
+  background-color: #f5f1e3;
   overflow-y: scroll;
+  margin: 10px;
 }
 
 .input-heading {
   text-transform: uppercase;
-  border-bottom: #151e3f;
+  border-bottom: #050505;
   border-style: solid;
   border-width: 0px 0px 2px 0px;
   margin: 5px;
@@ -119,9 +137,8 @@ p {
 }
 
 .statement {
-  font-size: small;
   text-align: justify;
-  text-transform: none;
+  font-size: smaller;
 }
 
 form {
@@ -131,7 +148,12 @@ form {
 }
 
 input {
-  width: 100%;
+  width: 95%;
+  vertical-align: auto;
+}
+
+textarea {
+  width: 95%;
   vertical-align: auto;
 }
 
@@ -143,9 +165,10 @@ input {
 }
 
 .cv-subheader {
-  font-size: large;
+  font-size: larger;
+  font-weight: 700;
   text-transform: uppercase;
-  border-color: #151e3f;
+  border-color: #050505;
   border-style: solid;
   border-width: 0px 0px 2px 0px;
   margin: 5px;
@@ -153,14 +176,25 @@ input {
   text-align: left;
 }
 
-.education-details {
+.section-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+.section-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 5px;
 }
 
-.education-wrapper {
+.section-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5px;
 }
 
 .btn-wrapper {
@@ -172,8 +206,73 @@ input {
 .btn {
   padding: 4px;
   margin: 2px;
-  background-color: #c16e70;
+  background-color: #050505;
   border-radius: 4px;
-  color: #f2f3d9;
+  color: #dddbcb;
   border-style: none;
+}
+
+.btn-wrapper-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-width: 0px 0px 0.5px 0px;
+}
+
+.btn-delete {
+  padding: 4px;
+  margin: 2px;
+  background-color: #050505;
+  border-radius: 4px;
+  color: #dddbcb;
+  border-style: none;
+
+  margin: 0px 0px 10px 0px;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.sub-title {
+  font-size: small;
+  font-style: italic;
+}
+
+.summary {
+  font-size: smaller;
+
+  white-space: pre-wrap;
+}
+
+.side-detail {
+  font-size: small;
+}
+
+.btn-wrapper-skill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-skill {
+  padding: 4px;
+  margin: 2px;
+  background-color: #050505;
+  border-radius: 4px;
+  color: #dddbcb;
+  border-style: none;
+  width: 75px;
+}
+
+.input-row-skill {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: left;
+  font-weight: 500;
+  font-size: medium;
+  align-items: center;
+  margin: 0px 0px 5px 0px;
 }

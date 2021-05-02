@@ -14,7 +14,7 @@ const TelField = ({ label, text, state, setState }) => {
       <input
         type="tel"
         onChange={myChangeHandler}
-        value={state.value}
+        value={state[text]}
         pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
       />
     </form>

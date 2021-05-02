@@ -9,6 +9,7 @@ const Experience = ({ state: cvState, setState: setCvState }) => {
     company: "",
     workFrom: "",
     workTo: "",
+    location: "",
     summary: "",
   });
 
@@ -25,6 +26,7 @@ const Experience = ({ state: cvState, setState: setCvState }) => {
       company: "",
       workFrom: "",
       workTo: "",
+      location: "",
       summary: "",
     });
   };
@@ -32,7 +34,8 @@ const Experience = ({ state: cvState, setState: setCvState }) => {
   const handleDeleteExperience = (index) => {
     setCvState((currentState) => {
       // Remove the index from the array
-      const newExperienceArray = currentState.experience.splice(index, 1);
+      const newExperienceArray = [...currentState.experience];
+      newExperienceArray.splice(index, 1);
       // Return state object with experience changed to updated array
       return { ...currentState, experience: newExperienceArray };
     });
@@ -68,16 +71,6 @@ const Experience = ({ state: cvState, setState: setCvState }) => {
                 }}
               />
               <TextField
-                label="Company"
-                text="company"
-                state={cvState.experience[index]}
-                setState={(fieldState) => {
-                  setExperienceState("company", index, fieldState);
-                }}
-              />
-            </div>
-            <div className="input-row">
-              <TextField
                 label="From"
                 text="workFrom"
                 state={cvState.experience[index]}
@@ -95,6 +88,24 @@ const Experience = ({ state: cvState, setState: setCvState }) => {
               />
             </div>
             <div className="input-row">
+              <TextField
+                label="Company"
+                text="company"
+                state={cvState.experience[index]}
+                setState={(fieldState) => {
+                  setExperienceState("company", index, fieldState);
+                }}
+              />
+              <TextField
+                label="Location"
+                text="location"
+                state={cvState.experience[index]}
+                setState={(fieldState) => {
+                  setExperienceState("location", index, fieldState);
+                }}
+              />
+            </div>
+            <div className="input-row">
               <LongTextField
                 label="Summary"
                 text="summary"
@@ -104,9 +115,9 @@ const Experience = ({ state: cvState, setState: setCvState }) => {
                 }}
               />
             </div>
-            <div className="btn-wrapper">
+            <div className="btn-wrapper-delete">
               <button
-                className="btn"
+                className="btn-delete"
                 onClick={() => handleDeleteExperience(index)}
               >
                 Delete
@@ -124,14 +135,6 @@ const Experience = ({ state: cvState, setState: setCvState }) => {
           setState={setExperience}
         />
         <TextField
-          label="Company"
-          text="company"
-          state={experience}
-          setState={setExperience}
-        />
-      </div>
-      <div className="input-row">
-        <TextField
           label="From"
           text="workFrom"
           state={experience}
@@ -140,6 +143,20 @@ const Experience = ({ state: cvState, setState: setCvState }) => {
         <TextField
           label="To"
           text="workTo"
+          state={experience}
+          setState={setExperience}
+        />
+      </div>
+      <div className="input-row">
+        <TextField
+          label="Company"
+          text="company"
+          state={experience}
+          setState={setExperience}
+        />
+        <TextField
+          label="Location"
+          text="location"
           state={experience}
           setState={setExperience}
         />
