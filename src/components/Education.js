@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "./styles/styles.css";
 import TextField from "./fields/TextField";
-import LongTextField from "./fields/LongTextField";
-import TelField from "./fields/TelField";
 
-const Education = ({ state, setState }) => {
+const Education = ({ state: cvState, setState: setCvState }) => {
   const [education, setEducation] = useState({
     uni: "",
     degree: "",
@@ -14,7 +12,7 @@ const Education = ({ state, setState }) => {
   });
 
   const handleAddEducation = () => {
-    setState((currentState) => {
+    setCvState((currentState) => {
       return {
         ...currentState,
         education: currentState.education.concat(education),
@@ -30,8 +28,17 @@ const Education = ({ state, setState }) => {
     });
   };
 
+  const handleDeleteEducation = (index) => {
+    setCvState((currentState) => {
+      // Remove the index from the array
+      const newEducationArray = currentState.education.splice(index, 1);
+      // Return state object with education changed to updated array
+      return { ...currentState, education: newEducationArray };
+    });
+  };
+
   const setEducationState = (fieldName, index, fieldState) => {
-    setState((currentState) => {
+    setCvState((currentState) => {
       // Duplicating current global state education array
       const newEducationArray = [...currentState.education];
       // Find current index of array, and updating the field within
@@ -47,13 +54,14 @@ const Education = ({ state, setState }) => {
     <div>
       <h1 className="input-heading">Education</h1>
       <div>
-        {state.education.map((value, index) => (
+        {/* Render education fields for each one saved in memory to allow editing */}
+        {cvState.education.map((value, index) => (
           <div key={index}>
             <div className="input-row">
               <TextField
                 label="Degree"
                 text="degree"
-                state={state.education[index]}
+                state={cvState.education[index]}
                 setState={(fieldState) => {
                   setEducationState("degree", index, fieldState);
                 }}
@@ -61,7 +69,7 @@ const Education = ({ state, setState }) => {
               <TextField
                 label="University"
                 text="uni"
-                state={state.education[index]}
+                state={cvState.education[index]}
                 setState={(fieldState) => {
                   setEducationState("uni", index, fieldState);
                 }}
@@ -71,7 +79,7 @@ const Education = ({ state, setState }) => {
               <TextField
                 label="Grade"
                 text="grade"
-                state={state.education[index]}
+                state={cvState.education[index]}
                 setState={(fieldState) => {
                   setEducationState("grade", index, fieldState);
                 }}
@@ -79,7 +87,7 @@ const Education = ({ state, setState }) => {
               <TextField
                 label="From"
                 text="studyFrom"
-                state={state.education[index]}
+                state={cvState.education[index]}
                 setState={(fieldState) => {
                   setEducationState("studyFrom", index, fieldState);
                 }}
@@ -87,15 +95,24 @@ const Education = ({ state, setState }) => {
               <TextField
                 label="To"
                 text="studyTo"
-                state={state.education[index]}
+                state={cvState.education[index]}
                 setState={(fieldState) => {
                   setEducationState("studyTo", index, fieldState);
                 }}
               />
             </div>
+            <div className="btn-wrapper">
+              <button
+                className="btn"
+                onClick={() => handleDeleteEducation(index)}
+              >
+                Delete
+              </button>
+            </div>
           </div>
         ))}
       </div>
+      {/* Render initial education input form */}
       <div className="input-row">
         <TextField
           label="Degree"
@@ -130,7 +147,11 @@ const Education = ({ state, setState }) => {
           setState={setEducation}
         />
       </div>
-      <button onClick={handleAddEducation}>Add another</button>
+      <div className="btn-wrapper">
+        <button className="btn" onClick={handleAddEducation}>
+          Add to CV
+        </button>
+      </div>
     </div>
   );
 };

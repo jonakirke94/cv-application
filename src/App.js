@@ -6,22 +6,22 @@ import PageHeader from "./components/PageHeader";
 import "./components/styles/styles.css";
 
 const App = () => {
-  const [state, setState] = useState({
+  const [cvState, setCvState] = useState({
     name: "",
     email: "",
     phone: "",
     location: "",
     statement: "",
     education: [],
+    experience: [],
   });
 
   return (
     <div>
       <PageHeader />
       <div className="section-wrapper">
-        <InputPage state={state} setState={setState} />
-
-        <OutputPage state={state} setState={setState} />
+        <InputPage state={cvState} setState={setCvState} />
+        <OutputPage state={cvState} setState={setCvState} />
       </div>
       <Footer />
     </div>

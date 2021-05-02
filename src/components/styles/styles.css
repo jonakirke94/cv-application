@@ -94,7 +94,6 @@ a {
 .output-page {
   background-color: aliceblue;
   overflow-y: scroll;
-
 }
 
 .input-page {
@@ -162,4 +161,19 @@ input {
 }
 
 .education-wrapper {
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 4px;
+  margin: 2px;
+  background-color: #c16e70;
+  border-radius: 4px;
+  color: #f2f3d9;
+  border-style: none;
 }

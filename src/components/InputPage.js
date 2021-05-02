@@ -2,12 +2,14 @@ import React from "react";
 import "./styles/styles.css";
 import CVHeader from "./CVHeader";
 import Education from "./Education";
+import Experience from "./Experience";
 
-const InputPage = ({ state, setState }) => {
+const InputPage = ({ state: cvState, setState: setCvState }) => {
   return (
     <section className="input-page">
-      <CVHeader state={state} setState={setState}></CVHeader>
-      <Education state={state} setState={setState}></Education>
+      <CVHeader state={cvState} setState={setCvState}></CVHeader>
+      <Education state={cvState} setState={setCvState}></Education>
+      <Experience state={cvState} setState={setCvState}></Experience>
     </section>
   );
 };
